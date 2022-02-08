@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script>
+            function random_function()
+            {
+                var a=document.getElementById("input").value;
+                output.length=1;
+                output2.length=1;
+                
+                if(a==="INDIA")
+                {
+                    var arr=["Select Option","Maharashtra","Delhi"];
+                }
+                else if(a==="USA")
+                {
+                    var arr=["Select Option","Washington","Texas","New York"];
+                }
+                else
+                {
+                	var arr1=["Select Option"];
+                }
+             
+                var string="";
+             
+                for(i=0;i<arr.length;i++)
+                {
+                    string=string+"<option value="+arr[i]+">"+arr[i]+"</option>";
+                }
+                document.getElementById("output").innerHTML=string;
+            }
+            function random_function1()
+            {
+            	// alert("Asd");
+                var a1=document.getElementById("output").value;
+                if(a1==="Maharashtra")
+                {
+                    var arr1=["Select Option","m1","m2"];
+                    
+                }
+                else if(a1==="Delhi")
+                {
+                	var arr1=["Select Option","1","2"];
+                }
+                else
+                {
+                	var arr1=["Select Option"];
+                }
+             
+                var string1="";
+             
+                for(i=0;i<arr1.length;i++)
+                {
+                    string1=string1+"<option value="+arr1[i]+">"+arr1[i]+"</option>";
+                }
+                document.getElementById("output2").innerHTML=string1;
+            }
+        </script>
+    </head>
+    <body>
+    	<pre>
+    		
+    	Country
+        <select id="input" onchange="random_function()">
+            <option>select option</option>
+            <option>INDIA</option>
+            <option>USA</option>
+        </select>
+        
+        State
+        <select id="output" onchange="random_function1()">
+            <option>select option</option>
+
+  </select>
+
+        City    
+        <select id="output2" onchange="random_function2()">
+           	<option>select option</option>
+        </select>
+    	</pre>
+
+    </body>
+</html>
