@@ -1,0 +1,232 @@
+types:
+
+1)primitive/value:
+- string 
+- number
+- boolean
+- undefined
+- null
+
+2)reference:
+- object
+		let person = {name:"yogesh",age:23};
+		person.name = "yo"; //change property
+		console.log(person);
+- array
+		//types of values different in array,andd it's dynamic
+		let testarray = ["a","b","c","d","e","f"];
+		console.log(testarray.length);	
+- function
+		//in function hello(name): at the time of declaration called parameters
+		function hello(name,lastname){
+			console.log("hi " + name + " " + lastname);
+		}
+		hello("yogesh","shah"); //at run time pass is called arguments
+
+- (.): class
+- (#): id
+
+//tagname used for (h-h1,h2..)tags
+- document.getElementsByTagName('h2');
+
+//to change style
+document.getElementsByTagName('h2')[0].style.backgroundColor = "blue";
+
+//remove the space
+document.getElementsByTagName('h1')[1].style.display = "none";
+
+//hide the element
+document.getElementsByTagName('h1')[1].style.visibility = "hidden";
+
+//console api:
+-cosole.log();
+-console.warn();
+-console.error();
+
+//alert of object
+alert (JSON.stringify(person));
+
+//loop through the array
+//output : 1,2,3,4,5
+
+1) for loop
+let arr = [1,2,3,4,5];
+for(let i=0;i<arr.length;i++){
+	console.log(arr[i]);
+}
+3) foreach loop
+let arr = [1,2,3,4,5];
+arr.forEach(function(element){
+	console.log(element);
+})
+
+4) while loop
+let a=0;
+while(a<arr.length){
+	console.log(arr[a]);
+	a++;
+}
+
+//statement
+1) break: break the loop and end up
+let arr = [1,2,3,4,5];
+for(let i=0;i<arr.length;i++){
+
+	if(i==2){
+		break;      
+	}		
+		console.log(arr[i]);
+}
+o/p: 1,2
+
+2) continue: skip particular value
+let arr = [1,2,3,4,5];
+for(let i=0;i<arr.length;i++){
+	if(i==2){
+		continue;
+	}		
+		console.log(arr[i]);
+}
+o/p: 1,2,4,5
+
+* array functions:
+
+let myarray = ["hello","yogesh","shah"];
+1) myarray.shift(); //remove first element from array
+console.log(myarray.length);
+2) myarray.pop();
+console.log(myarray);//remove last element
+3)myarray.push("hii"); //add element to array
+
+=>convert array to string
+myarray.toString();
+
+<div id="firstcontainer" class="container">
+	<button id="click">click me</button>
+</div>
+<div class="container">
+	<p id="test1">this is paragraph</p>
+</div>
+
+//DOM manipulation
+1)by id
+let elem = document.getElementById("click");
+console.log(elem);
+
+2)by classname:return html collection
+let elemclass = document.getElementsByClassName("container");
+console.log(elemclass);
+
+3)by tagnme:
+//return the tags if i have button it returns the htmlcollection of buttons
+let tn  = document.getElementsByTagName('button');
+console.log(tn);
+
+NOTE:
+- if i want to acces id then getElementBYID("id");
+- if i want to access class then use getElementsByClassName("class");
+- if i want to access tagname then use getElementsByTagName("tagname");
+
+//query selectors
+Here you can note that id -> getelementbyid          // id is only one
+AND IN              class -> getElementsByclassname // because posibility to have multiple classes
+AND IN				  tag -> getElementsByTagName  // because we have multiple tagname(usebutton,div,h1..)
+
+//to create child
+createdelement = document.createElement('p');
+createdelement.innerText = "created para";
+tn[0].appendChild(createdelement);
+console.log(createdelement);
+
+//replace the element
+createdelement2 = document.createElement('b');
+createdelement2.innerText = "bold";
+tn[0].replaceChild(createdelement2,createdelement);
+console.log(createdelement2);
+
+//to remove a child
+tn[0].removeChild(createdelement2);
+
+//docment methods
+- document.location
+- document.title
+- document.url
+
+//query selector
+1)select only one like one container display
+let a = document.querySelector('.container');
+console.log(a);
+2)select all the container
+let a = document.querySelectorAll('.container');
+console.log(a);
+
+//evets in javascript
+1) click:
+firstcontainer.addEventListener('click',function(){
+	console.log('clicked on the container');
+});
+
+2) mouseover:
+firstcontainer.addEventListener('mouseover',function(){
+	console.log('Mouse In container');
+});
+
+3)  mouseout
+firstcontainer.addEventListener('mouseout',function(){
+	console.log('Mouse Out Of Container');
+});
+
+4) mouseup
+firstcontainer.addEventListener('mouseup',function(){
+	console.log('Mouse up Of Container');
+});
+
+5)mousedown
+firstcontainer.addEventListener('mousedown',function(){
+	console.log('Mouse down Of Container');
+});
+
+6)window.onload: fires when document is load
+window.onload = function(){
+	alert("hi yogesh");
+};
+
+* setItem:
+ function logs(){
+	console.log("Logs Are Here");
+}
+setTimeout(logs,1500);
+
+* to store a data in localstorage
+localstorage.setItem("name","yo");
+localstorage.getItem("name");	
+
+-To see where the localdata stored in application=>local storage
+
+
+//how to access array object through the loop
+	let test= [{
+		Name: 'Ravindra',
+		sports: ['chess','cricket'],
+	},
+	{
+		Name: 'ravi',
+		sports: ['cricket','football'],
+
+	},
+	{
+		Name: 'rishabh',
+		sports: ['table-tennis','football'],
+	},
+	]
+
+1) foreach: 
+			Object.keys(test).forEach(key => console.log(test[key]));
+2) forloop:
+	for (let key in test) {
+    	  console.log(test[key]);
+     	  //console.log(test[0].sports);
+	}
+
+
+
